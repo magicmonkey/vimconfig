@@ -4,6 +4,9 @@
 :call pathogen#helptags()
 :call pathogen#runtime_append_all_bundles()
 
+" I only use terms which are 255.  Honest.
+:set t_Co=255
+
 " Quickly edit/reload the vimrc file
 :nmap <silent> <leader>ev :e $MYVIMRC<CR>
 :nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -111,4 +114,8 @@ function! HasPaste()
 		return ''
 	endif
 endfunction
+
+" Pick a color scheme
+:colorscheme candycode
+":colorscheme zenburn
 
