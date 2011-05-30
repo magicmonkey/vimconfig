@@ -53,3 +53,24 @@
 " show search matches as you type
 :set incsearch
 
+" remember more commands and search history
+:set history=1000
+
+" use many muchos levels of undo
+:set undolevels=1000
+
+:set wildignore=*.swp,*.bak,*.pyc,*.class
+
+" change the terminal's title
+:set title
+
+" don't beep
+:set visualbell
+:set noerrorbells
+
+" Backup files are just annoying
+:set nobackup
+
+" Swap files are just annoying
+:set noswapfile
+
