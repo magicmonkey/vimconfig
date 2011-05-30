@@ -26,6 +26,11 @@
 " copy the previous indentation on autoindenting
 :set copyindent
 
+" Enable filetype-specific stuff
+:filetype on
+:filetype plugin on
+:filetype indent on
+
 " always show line numbers
 :set number
 
@@ -68,9 +73,42 @@
 :set visualbell
 :set noerrorbells
 
-" Backup files are just annoying
-:set nobackup
+" Keep temp files in a central place, not littering my source tree
+:set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+:set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Swap files are just annoying
 :set noswapfile
+
+" Make vim scroll this many lines from the edge of the screen
+:set scrolloff=3
+
+" Improve filename tab-completion
+:set wildmenu
+:set wildmode=list:longest
+
+" Highlight trailing whitespace and lines which fall off the screen
+:set listchars=tab:>-,trail:·,extends:#
+" Toggle list highlighting
+:nmap <silent> <leader>s :set nolist!<CR>           
+
+" Only highlight matching bracket briefly
+:set mat=2
+
+" Always show the statusline
+:set laststatus=2
+
+" Format the statusline
+:set statusline=\ %{fugitive#statusline()}\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+function! CurDir()
+	let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+	return curdir
+endfunction
+function! HasPaste()
+	if &paste
+		return 'PASTE MODE  '
+	else
+		return ''
+	endif
+endfunction
 
