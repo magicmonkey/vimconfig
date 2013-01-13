@@ -6,5 +6,5 @@ function! PHPTAGS()
         echo "phptags not available"
     endif
 endfunction
-call TextEnableCodeSnip('sql', '@begin=sql@', '@end=sql@', 'SpecialComment' )
+" call TextEnableCodeSnip('sql', '@begin=sql@', '@end=sql@', 'SpecialComment' )
 command! Mtags call PHPTAGS()
