@@ -122,3 +122,9 @@ endfunction
 colorscheme candycode
 ":colorscheme zenburn
 
+" Run the current file in nodejs
+nmap <silent> <C-n> :!node %<CR>           
+
+" Disable markdown folding
+let g:vim_markdown_folding_disabled=1
+
