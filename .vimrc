@@ -1,3 +1,5 @@
+let mapleader = "\<Space>"
+
 set nocompatible
 
 " Setup Pathogen, which allows plugins to live in their own dirs
@@ -96,7 +98,7 @@ set wildmode=list:longest
 " Highlight trailing whitespace and lines which fall off the screen
 set listchars=tab:>-,trail:·,extends:#
 " Toggle list highlighting
-nmap <silent> <leader>s :set nolist!<CR>           
+nmap <silent> <leader>s :set nolist!<CR>
 
 " Only highlight matching bracket briefly
 set mat=2
@@ -123,8 +125,25 @@ colorscheme candycode
 ":colorscheme zenburn
 
 " Run the current file in nodejs
-nmap <silent> <C-n> :!node %<CR>           
+nmap <silent> <C-n> :!node %<CR>
 
 " Disable markdown folding
 let g:vim_markdown_folding_disabled=1
+
+" Some custom stuff for go coding
+au BufRead,BufNewFile *.go set filetype=go
+nmap <silent> <leader>g :GoRun main.go<CR>
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
 
