@@ -133,9 +133,9 @@ let g:vim_markdown_folding_disabled=1
 " Some custom stuff for go coding
 au BufRead,BufNewFile *.go set filetype=go
 nmap <silent> <leader>g :GoRun main.go<CR>
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
@@ -146,4 +146,6 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>gf :GoFmt<CR>
+au FileType go nmap <Leader>gi :GoImports<CR>
 
