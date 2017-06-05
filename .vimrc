@@ -148,4 +148,7 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " Move the vim wiki into Google Drive
-let g:vimwiki_list = [{'path': '~/googledrive/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/googledrive/vimwiki/work'},{'path': '~/googledrive/vimwiki/personal'}]
+
+syntax on
+
